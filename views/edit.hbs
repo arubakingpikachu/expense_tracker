@@ -1,0 +1,66 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+       <h3>修改支出</h3>
+ <form action="/records/{{record._id}}?_method=PUT" method="POST">
+<!--項目-->
+  <div class="mb-3">
+    <label for="name">項目</label>
+    <input 
+    class="form-control"
+    type="text" 
+    placeholder="輸入支出" 
+    id="name"
+    name="name"
+    style="width:200px; height:40px;"
+    value="{{record.name}}"
+    required>
+  </div>
+<!--金額-->
+  <div class="mb-3">
+    <label for="amount">金額</label>
+    <input 
+    class="form-control"
+    type="number" 
+    placeholder="輸入金額，最小值為1" 
+    min="1"
+    id="amount"
+    name="amount"
+    style="width:200px; height:40px;"
+    value="{{record.amount}}"  
+    required>
+  </div>
+<!--日期-->
+  <div class="mb-3">
+    <label for="date">日期</label>
+    <input 
+    class="form-control"
+    type="date-local" 
+    id="date"
+    name="date"
+    style="width:200px; height:40px;"
+    placeholder="yyyy/mm/dd"
+    value="{{record.date}}" 
+    required>
+  </div>
+  <!--類別-->
+  <div class="mb-3">
+    <label for="category">類別</label>
+    <select class="form-control" aria-label="Default select example" name="category" id="category" style="width:200px; height:40px;" >
+      <option selected  hidden value="{{cateName}}">{{cateName}}</option> 
+      {{#each category}}
+      <option value="{{this.categoryName}}">{{this.categoryName}}</option>
+      {{/each}}
+    </select>
+  </div>
+    <div class="mb-3">
+    <button class="btn btn-success btn-sm" type="submit">Save</button>
+    <a class="btn btn-primary btn-sm" href="/"role="button">Back</a>
+    <input type="reset"class="btn btn-danger btn-sm" value="Reset" />
+  </div>
+  
+  </div>
+  
+   </form>
+</div>
+</div>

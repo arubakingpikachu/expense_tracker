@@ -1,0 +1,58 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    依支出類別篩選
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="/">查看全部</a></li>
+    <li><a class="dropdown-item" href="/家居物業">家居物業</a></li>
+    <li><a class="dropdown-item" href="/交通出行">交通出行</a></li>
+    <li><a class="dropdown-item" href="/休閒娛樂">休閒娛樂</a></li>
+    <li><a class="dropdown-item" href="/餐飲食品">餐飲食品</a></li>
+    <li><a class="dropdown-item" href="/其他">其他</a></li>
+  </ul>
+</div>
+
+<div class="d-flex justify-content-center m-5" >
+  <h3 >TotalAmount</h3>
+</div>
+<div class="d-flex justify-content-center m-5" >
+  <h1 name="totalAmount">${{totalAmount}}</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">類別</th>
+      <th scope="col">項目</th>
+      <th scope="col">金額</th>
+      <th scope="col">日期</th>
+      <th scope="col">編輯</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each record}}
+    <tr>
+      <th scope="row"><i class="{{this.icon}}"></i></th>
+      <td>{{ this.name }}</td>
+      <td>{{ this.amount }}</td>
+      <td>{{ this.date }}</td>
+      <td>
+        <a class="btn btn-success btn-sm" href="./records/{{ this._id }}/edit">edit</a>
+          <form action="./records/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+            <button class="btn btn-danger btn-sm" type="submit">delete</button>
+          </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<div class=" d-flex justify-content-center">
+  <form action="/records/new">
+    <button class="btn btn-primary btn-lg" type="submit">新增</button>
+  </form>
+</div>
+
+
+ 
+

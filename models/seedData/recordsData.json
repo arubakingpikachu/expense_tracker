@@ -1,0 +1,8 @@
+{
+  "results": [
+    {"name": "早餐","amount": "85","date": "2023/05/03","category": "餐飲食品"},
+    {"name": "晚餐","amount": "105","date": "2023/05/03","category": "餐飲食品"},
+    {"name": "午餐","amount": "100","date": "2023/05/03","category": "餐飲食品"}
+  ]
+   
+}
