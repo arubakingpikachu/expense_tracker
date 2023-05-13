@@ -1,9 +1,7 @@
-# 我的餐廳清單
-![login]()
-![index]()
+# 家計簿
 
 ## 功能
-1. 在首頁瀏覽所有支出的項目、金額。
+1. 在首頁瀏覽所有支出的項目、金額、類別、日期。
 2. 使用者可新增支出資料。
 3. 使用者可以修改各支出的資訊。
 5. 使用者可以利用下拉式選單篩選支出類別。
@@ -16,27 +14,32 @@
 1. 確認已安裝npm、node.js、nodemon 。
 2. 在終端機clone本專案。
 ```
-git clone https://github.com/arubakingpikachu/restaurantList.git
+git clone https://github.com/arubakingpikachu/expense_tracker.git
 ```
-3. 透過終端機打開restaurantList資料夾，輸入：
+3. 透過終端機打開expense_tracker資料夾，輸入：
 ```
 npm install
 ```
-以安裝npm
-4. 以上開發工具安裝完畢後，輸入：
+以安裝相關套件
+4. 輸入:
+```
+npm run seed
+```
+以設定種子資料(示範帳號請參下方)。
+5. 以上開發工具安裝完畢後，輸入：
 ```
 npm run dev
 ```
 以開啟伺服器。
-5. 若見到以下訊息，即代表執行成功：
+6. 若見到以下訊息，即代表執行成功：
 ```
 Express is listening on localhost:3000
 mongodb connected!
 
 ```
 
-6. 在瀏覽器輸入http://localhost:3000，即可查看網站。
-7. 若欲暫停使用，在終端機輸入ctrl+c即可。
+7. 在瀏覽器輸入http://localhost:3000，即可查看網站。
+8. 若欲暫停使用，在終端機輸入ctrl+c即可。
 
 
 
@@ -61,4 +64,4 @@ mongodb connected!
 * user1
 email=user1@example.com
 password=12345678
-
+    
