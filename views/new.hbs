@@ -2,6 +2,7 @@
   <div class="col-md-6 m-auto">
     <div class="card card-body">
       <h3>新增支出</h3>
+      {{>message}}
  <form action="/records" method="POST">
 <!--項目-->
   <div class="mb-3">
@@ -13,7 +14,7 @@
     id="name"
     name="name"
     style="width:200px; height:40px;"
-    required>
+    >
   </div>
 <!--金額-->
   <div class="mb-3">
@@ -26,7 +27,7 @@
     id="amount"
     name="amount"
     style="width:200px; height:40px;"
-    required>
+    >
   </div>
 <!--日期-->
   <div class="mb-3">
@@ -38,7 +39,7 @@
     id="date"
     name="date"
     style="width:200px; height:40px;"
-    required>
+    >
   </div>
   <!--類別-->
   <div class="mb-3">

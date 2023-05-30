@@ -7,10 +7,9 @@ const bcrypt = require('bcryptjs')
 const Category=require('../category')
 const User=require('../user')
 const Record=require('../record')
-const record = require('../record')
+
 
 const userData=require('../seedData/userData.json').results
-console.log(userData)
 const categoryData=require('../seedData/categoryData.json').results
 const recordData=require('../seedData/recordsData.json').results
 
@@ -27,14 +26,13 @@ db.once('open',async()=>{
 
   const userId=seedUser._id
 
- 
-  recordData.forEach(async record=>{
+  for(const record of recordData){
     const {name,amount,date,category}=record
     const refCate=await Category.findOne({categoryName:category})//找出要新增的類別
     const categoryId=refCate._id
     await  Record.create({name,amount,date,categoryId,userId})
-  })
+  }
   console.log('created record!')
-
+  process.exit()
 
 })
