@@ -6,8 +6,8 @@ const router=express.Router()
 
 
 router.get('/new',async (req, res) => {
-  const category=await Category.find({}).lean()
-  res.render('new',{category})
+  const cate=await Category.find({}).lean()
+  res.render('new',{category:cate})
 }) //new的頁面
 
 router.post('/',async (req,res)=>{
@@ -15,7 +15,9 @@ router.post('/',async (req,res)=>{
   const errors = []
   const userId=req.user._id
   if(!name||!amount||!date||!category){errors.push({message:'有欄位沒填到喔'})}
-  if (errors.length) {return res.render('new', {errors,name,amount,date,category})}
+  if (errors.length) {
+    const cate=await Category.find({}).lean()
+    return res.render('new', {errors,name,amount,date,category:cate})}
   try{
   const refCate=await Category.findOne({categoryName:category})//找出要新增的類別
   const categoryId=refCate?._id
